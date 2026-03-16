@@ -1,0 +1,24 @@
+name: Run Python Files
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run day1.py
+        run: python day1.py
+
+      - name: Run day2.py
+        run: python day2.py
